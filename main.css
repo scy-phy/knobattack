@@ -753,7 +753,7 @@ h6 {
    NAVIGATION
    ========================================================================== */
 nav {
-  background: #2b2b2b;
+  background: #083255;
 }
 .nav-link {
   color: #e7e7e7;
@@ -769,8 +769,7 @@ nav {
    HEADER
    ========================================================================== */
 .header {
-//  background-image: url('toronto2.png');
-  background-color: #2b2b2b;
+  background-color: #083255;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
@@ -801,10 +800,10 @@ nav {
 .call-action-area .call-action-link,
 .btn {
   background-color: #fddd52;
-  background-image: -moz-linear-gradient(top, #fddd52 30%, #f0a303 150%);
-  background-image: -webkit-linear-gradient(top, #fddd52 30%, #f0a303 150%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fddd52', endColorstr='#f0a303');
-  background-image: linear-gradient(top, #fddd52 30%, #f0a303 150%);
+  background-image: -moz-linear-gradient(top, #fddd52 30%, #af4b14 150%);
+  background-image: -webkit-linear-gradient(top, #fddd52 30%, #af4b14 150%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fddd52', endColorstr='#af4b14');
+  background-image: linear-gradient(top, #fddd52 30%, #af4b14 150%);
   color: #2b2b2b;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.4), inset 0 -2px 3px 0 #cc7f0a, inset 0 1px 0 0 #fff9b1;
@@ -823,11 +822,11 @@ nav {
    CONTENT
    ========================================================================== */
 .content a {
-  color: #f0a303;
+  color: #af4b14;
 }
 .content a:hover,
 .content a:focus {
-  color: #fddd52;
+  color: #5f341c;
   text-decoration: underline;
 }
 /* =============================================================================
@@ -928,7 +927,7 @@ nav {
 .sponsor--link:focus,
 .partner-link:hover,
 .partner-link:focus {
-  border-color: #f0a303;
+  border-color: #af4b14;
 }
 /* =============================================================================
    CONTACT
@@ -971,4 +970,13 @@ nav {
   .github-link {
     display: none;
   }
+}
+
+.logos {
+	margin: 0pt auto;
+	width: 600pt;
+}
+
+.logos img {
+	margin: 0pt 50pt;
 }
