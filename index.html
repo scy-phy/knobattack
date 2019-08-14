@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Partially based on Hugo conference theme/Conf Boilerplate -->
 <html itemscope itemtype="http://schema.org/Event">
 <head>
   <title itemprop="name">KNOB Attack</title>
@@ -14,7 +15,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://knobattack.com">
   
-<meta name="twitter:image" content="https://knobattack.com/twitter.png"/>
+<meta name="twitter:image" content="https://knobattack.com/images/twitter.png"/>
 
 <meta name="twitter:title" content="KNOB Attack"/>
 <meta name="twitter:description" content="Details on the KNOB attack"/>
@@ -26,8 +27,23 @@
     <nav id="nav">
       <ul class="wrapper">
 	<li class="nav-item">
-          <a href="#about"  target="_blank" title="About" class="nav-link">
+          <a href="#about"  title="About" class="nav-link">
             About
+          </a>
+	</li>
+	<li class="nav-item">
+          <a href="#vulnerable"  title="Vulnerable Devices" class="nav-link">
+            Vulnerable Devices
+          </a>
+	</li>
+	<li class="nav-item">
+          <a href="#media"  title="Media" class="nav-link">
+            Media
+          </a>
+	</li>
+	<li class="nav-item">
+          <a href="#team"  title="Team" class="nav-link">
+            Team
           </a>
 	</li>
       </ul>
@@ -36,24 +52,103 @@
     <header class="header">
       <div class="wrapper">
 	<h1 class="logo-name">KNOB Attack</h1>
-	<h2 class="tagline">Details will be announced soon</h2>
-	 <div class="call-action-area">
-        Status: Details to be announced at USENIX Security 2019</a>
-</div>
+	<h2 class="tagline">Key Negotiation of Bluetooth Attack: Breaking Bluetooth Security</h2>
       </div>
     </header>    
     <hr>
     <div class="content" id="content">
-      <div class="wrapper">        
+      <div class="wrapper">	
           <section class="about" id="about">
-            <h2 class="section-title">About</h2>
+            <h2 class="section-title">About the KNOB Attack</h2>
 	    <p itemprop="description">
-	      A brief intro will be provided here</p>
+	      Bluetooth is a wireless communication protocol commonly used
+	      between nearby devices to transfer data, for example between
+	      a wireless headset and a phone, or between two phones when
+	      transferring files between them. This communication can
+	      contain private and sensitive data, and the Bluetooth
+	      standard provides security features to protect against
+	      eavesdropping and manipulation.  We found an attack that 
+	      allows an attacker to break this security
+	      mechanism for any standard-compliant Bluetooth device. As a
+	      result, an attacker is able to the listen in on, or change
+	      the content of, nearby Bluetooth communication, even between
+	      devices that have previously been successfully paired.
+
+		  <p>We call our attack the <b>Key Negotiation of
+	      Bluetooth</b> (KNOB) Attack. Because this attack affects
+	      basically all devices that "speak Bluetooth", we decided
+	      to coordinate public disclosure with industry to try to
+	      make sure that workarounds could be put in place. In
+	      November 2018 we shared details of the attack with the
+	      Bluetooth Special Interest Group (Bluetooth
+	      SIG)&mdash;the standards organisation that oversees the
+	      development of Bluetooth standards&mdash;as well as the
+	      CERT Coordination Center and the International
+	      Consortium for Advancement of Cybersecurity on the
+	      Internet (ICASI)&mdash;an industry led coordination body
+	      founded by Intel, Microsoft, Cisco, Juniper and
+	      IBM.</p>
+
+		<p>For more information on affected systems
+		see <a href="https://www.kb.cert.org/vuls/id/918987/">the
+		CVE</a>. The technical details of the attack is
+		available in
+		our <a href="https://www.usenix.org/conference/usenixsecurity19/presentation/antonioli">research
+		    paper</a>. TL;DR: The entropy of Bluetooth
+		session keys is negotiated in an unauthenticated
+		protocol between the participants. The attacker can
+		manipulate this to the lowest entropy allowed, 1 byte. The resulting session key can then
+		easily be brute forced.</p>
+		  
           </section>
 
-          <footer class="footer">
-          <p>Partially based on Hugo conference theme/ <a href="https://github.com/braziljs/conf-boilerplate" target="_blank">Conf Boilerplate</a></p>
-        </footer>
+         <section class="cfp" id="vulnerable">
+            <h2 class="section-title">Are my Devices Vulnerable?</h2>
+	    <p itemprop="description">
+	      The KNOB attack is possible due to flaws in the
+	      Bluetooth specification. As such, any standard-compliant
+	      Bluetooth device can be expected to be vulnerable. We
+	      conducted KNOB attacks on more than 17 unique Bluetooth
+	      chips (by attacking 24 different devices). At the time
+	      of writing, we were able to test chips from Broadcom,
+	      Qualcomm, Apple, Intel, and Chicony manufacturers. <b>All
+	      devices that we tested were vulnerable to the KNOB
+	      attack</b>.</p>
+
+	      <p>After we disclosed our attack to industry in late 2018,
+	      some vendors might have implemented workarounds for the
+	      vulnerability on their devices. So the short answer is: if
+	      your device was not updated after late 2018, it is likely
+	      vulnerable. Devices updated afterwards might be fixed.
+	    </p>
+          </section>
+          <section class="about" id="team">
+            <h2 class="section-title">Team</h2> <p>The KNOB attack was
+	    identified, investigated, and demonstrated by an
+	      international team of researchers.</p>
+	      <ul class="speakers-list">
+          <li><a href="https://francozappa.github.io/">Daniele Antonioli</a> (Singapore University of
+	    Technology and Design)</li>
+		<li><a href="https://cispa.saarland/people/nils.tippenhauer/">Nils Ole Tippenhauer</a> (CISPA
+	    Helmholtz Center for Information Security)<li>
+		<li><a href="http://www.cs.ox.ac.uk/people/kasper.rasmussen/">Kasper Rasmussen</a> (University of Oxford)</li>
+	      </ul>
+
+		  <div class="logos">
+			<img src="images/sutd.png" width="140px">
+			<img src="images/cispa.svg" width="140px">
+			<img src="images/oxford.png" width="100px">
+		  </div>
+          </section>
+          <section class="cfp" id="media">
+            <h2 class="section-title">Media Coverage</h2>
+	    <p itemprop="description">
+	      <ul>
+		<li> 2019/8/14: Hackernews.com <a href=https://thehackernews.com/2019/08/bluetooth-knob-vulnerability.html>article</a>: "New Bluetooth Vulnerability Lets Attackers Spy On Encrypted Connections" by Mohit Kumar</li>
+	      </ul>
+	    </p>
+          </section>
+	  
       </div>
     </div>
   </div>
