@@ -61,17 +61,21 @@
       <div class="wrapper">	
           <section class="about" id="about">
             <h2 class="section-title">About the KNOB Attack</h2>
+
+            <p>TL;DR: The specification of Bluetooth includes an encryption key negotiation protocol that allows to negotiate encryption keys with 1 Byte of entropy without protecting the integrity of the negotiation process. A remote attacker can manipulate the entropy negotiation to let any standard compliant Bluetooth device negotiate encryption keys with 1 byte of entropy and then brute force the low entropy keys in real time.</p>
+
 	    <p itemprop="description">
 	      Bluetooth is a wireless communication protocol commonly used
-	      between nearby devices to transfer data, for example between
-	      a wireless headset and a phone, or between two phones when
-	      transferring files between them. This communication can
-	      contain private and sensitive data, and the Bluetooth
+	      between low power devices to transfer data, e.g., between
+	      a wireless headset and a phone, or between two laptops.
+	      Bluetooth communications might
+	      contain private and/or sensitive data, and the Bluetooth
 	      standard provides security features to protect against
-	      eavesdropping and manipulation.  We found an attack that 
-	      allows an attacker to break this security
-	      mechanism for any standard-compliant Bluetooth device. As a
-	      result, an attacker is able to the listen in on, or change
+	      someone who wants to eavesdrop and/or manipulate your information.
+        We found and exploited a severe vulnerability in the Bluetooth specification that
+	      allows an attacker to break the security
+	      mechanisms of Bluetooth for any standard-compliant device. As a
+	      result, an attacker is able to the listen, or change
 	      the content of, nearby Bluetooth communication, even between
 	      devices that have previously been successfully paired.
 
@@ -92,14 +96,11 @@
 
 		<p>For more information on affected systems
 		see <a href="https://www.kb.cert.org/vuls/id/918987/">
-		CVE-2019-9506 </a>. The technical details of the attack is
-		available in
-		our <a href="https://www.usenix.org/conference/usenixsecurity19/presentation/antonioli">research
-		    paper</a>. TL;DR: The entropy of Bluetooth
-		session keys is negotiated in an unauthenticated
-		protocol between the participants. The attacker can
-		manipulate this to the lowest entropy allowed, 1 byte. The resulting session key can then
-		easily be brute forced.</p>
+		CVE-2019-9506 </a>. The technical details of the attack are
+		available in our <a href="https://www.usenix.org/conference/usenixsecurity19/presentation/antonioli">research
+      paper</a>. Our <a href="https://github.com/francozappa/knob">repository</a> contains the code that we developed to implement and test the KNOB attack, including our <a href="https://github.com/francozappa/knob/tree/master/poc-internalblue">PoC</a>.</p>
+
+
 		  
           </section>
 
